@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">MenuConDiferentesFunciones</string>
+    <string name="male">hombre</string>
+    <string name="female">Mujer</string>
+</resources>
