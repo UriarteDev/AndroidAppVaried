@@ -1,4 +1,4 @@
-package com.example.menucondiferentesfunciones.ImcCalculator
+package com.example.menucondiferentesfunciones.IMCApp
 
 import android.os.Bundle
 import android.widget.Button
@@ -7,7 +7,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import com.example.menucondiferentesfunciones.ImcCalculator.IMCActivity.Companion.IMC_KEY
+import com.example.menucondiferentesfunciones.IMCApp.IMCActivity.Companion.IMC_KEY
 import com.example.menucondiferentesfunciones.R
 
 class ResultIMCActivity : AppCompatActivity() {
@@ -15,7 +15,7 @@ class ResultIMCActivity : AppCompatActivity() {
     private lateinit var tvResult: TextView
     private lateinit var tvIMC: TextView
     private lateinit var tvDescription: TextView
-    private lateinit var btnRecalculat: Button
+    private lateinit var btnRecalculate: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,10 +29,11 @@ class ResultIMCActivity : AppCompatActivity() {
         val result:Double = intent.extras?.getDouble(IMC_KEY) ?: -1.0
         initComponents()
         initUI(result)
+        initListeners()
     }
 
     private fun initListeners(){
-        btnRecalculat.setOnClickListener { onBackPressed() }
+        btnRecalculate.setOnClickListener { onBackPressed() }
     }
 
     private fun initUI(result: Double) {
@@ -66,6 +67,6 @@ class ResultIMCActivity : AppCompatActivity() {
         tvResult=findViewById(R.id.tvResult)
         tvIMC=findViewById(R.id.tvIMC)
         tvDescription=findViewById(R.id.tvDescription)
-        btnRecalculat=findViewById(R.id.btnReCalculate)
+        btnRecalculate=findViewById(R.id.btnReCalculate)
     }
 }

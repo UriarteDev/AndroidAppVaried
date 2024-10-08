@@ -13,7 +13,10 @@
         android:theme="@style/Theme.MenuConDiferentesFunciones"
         tools:targetApi="31">
         <activity
-            android:name=".ImcCalculator.ResultIMCActivity"
+            android:name=".ListApp.ListActivity"
+            android:exported="false" />
+        <activity
+            android:name=".IMCApp.ResultIMCActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
@@ -25,9 +28,8 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".ImcCalculator.IMCActivity"
-            android:exported="true">
-        </activity>
+            android:name=".IMCApp.IMCActivity"
+            android:exported="true"></activity>
     </application>
 
 </manifest>

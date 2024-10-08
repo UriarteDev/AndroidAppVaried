@@ -7,7 +7,8 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import com.example.menucondiferentesfunciones.ImcCalculator.IMCActivity
+import com.example.menucondiferentesfunciones.IMCApp.IMCActivity
+import com.example.menucondiferentesfunciones.ListApp.ListActivity
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -20,7 +21,14 @@ class MainActivity : AppCompatActivity() {
             insets
         }
         val btnIMC = findViewById<Button>(R.id.btnIMC)
+        val btnList = findViewById<Button>(R.id.btnList)
         btnIMC.setOnClickListener { navigateToIMC() }
+        btnList.setOnClickListener { navigateToList() }
+    }
+
+    private fun navigateToList() {
+        val  intent = Intent(this, ListActivity::class.java)
+        startActivity(intent)
     }
 
     private fun navigateToIMC(){

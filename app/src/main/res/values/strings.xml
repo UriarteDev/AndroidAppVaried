@@ -1,5 +1,5 @@
 <resources>
-    //imccalculator//
+    <!--IMCApp-->
     <string name="app_name">MenuConDiferentesFunciones</string>
     <string name="male">hombre</string>
     <string name="female">Mujer</string>
@@ -23,4 +23,8 @@
 
     <string name="tObesidad">Obesidad</string>
     <string name="dObesidad">Estás MUY por encima de lo optimo para tu peso y altura</string>
+
+    <!--ListApp-->
+    <string name="listTitle">NO OLVIDES NADA</string>
+    <string name="listCategories">CATEGORIAS</string>
 </resources>
