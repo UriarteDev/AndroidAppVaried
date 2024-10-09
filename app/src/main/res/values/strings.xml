@@ -27,4 +27,6 @@
     <!--ListApp-->
     <string name="listTitle">NO OLVIDES NADA</string>
     <string name="listCategories">CATEGORIAS</string>
+    <string name="listTask">TAREAS</string>
+    <string name="listDialogAdd">Añade una tarea</string>
 </resources>

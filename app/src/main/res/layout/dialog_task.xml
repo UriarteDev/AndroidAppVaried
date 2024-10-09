@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="250dp"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@color/card">
+
+    <EditText
+        android:id="@+id/etTask"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/white"
+        android:hint="@string/listDialogAdd"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"/>
+
+    <RadioGroup
+        android:id="@+id/rgCategories"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RadioButton
+            android:id="@+id/rbtnCompras"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Compras"
+            android:checked="true"
+            android:textColor="@color/white"
+            android:buttonTint="@color/LCompras"/>
+
+        <RadioButton
+            android:id="@+id/rbtnNotas"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Notas"
+            android:textColor="@color/white"
+            android:buttonTint="@color/LNotas"/>
+
+        <RadioButton
+            android:id="@+id/rbtnOtros"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Otros"
+            android:textColor="@color/white"
+            android:buttonTint="@color/LOtros"/>
+
+    </RadioGroup>
+</LinearLayout>

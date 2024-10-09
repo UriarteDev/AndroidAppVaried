@@ -1,9 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!--IMCApp-->
     <color name="white">#FFFFFFFF</color>
     <color name="background">#000000</color>
     <color name="cardSelected">#FF111328</color>
     <color name="card">#1D1E33</color>
     <color name="purple">#583AA2</color>
     <color name="backgroundList">#34729E</color>
+    <!--ListApp-->
+    <color name="LCompras">#FF683C</color>
+    <color name="LNotas">#44DC33</color>
+    <color name="LOtros">#F81F36</color>
+    <color name="LAdd">#F311FF</color>
 </resources>

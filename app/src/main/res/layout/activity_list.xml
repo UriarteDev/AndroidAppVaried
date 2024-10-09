@@ -1,32 +1,63 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".ListApp.ListActivity"
-    android:orientation="vertical"
-    android:background="@color/backgroundList">
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="35sp"
-        android:text="@string/listTitle"
-        android:textStyle="bold"
-        android:textColor="@color/white"
-        android:layout_marginVertical="44dp"
-        android:layout_marginHorizontal="32dp"/>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/listCategories"
-        android:textStyle="bold"/>
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rvCategories"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:id="@+id/main"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
-</LinearLayout>
+        android:layout_height="match_parent"
+        tools:context=".ListApp.ListActivity"
+        android:orientation="vertical"
+        android:background="@color/backgroundList">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="35sp"
+            android:text="@string/listTitle"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            android:layout_marginVertical="44dp"
+            android:layout_marginHorizontal="32dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/listCategories"
+            android:textStyle="bold"
+            android:layout_marginHorizontal="32dp"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvCategories"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/listTask"
+            android:textStyle="bold"
+            android:layout_marginTop="32dp"
+            android:layout_marginHorizontal="32dp"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvTask"
+            android:layout_marginTop="16dp"
+            android:layout_marginHorizontal="32dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabAddTask"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="32dp"
+        app:fabSize="normal"
+        app:backgroundTint="@color/LAdd"
+        android:layout_gravity="end|bottom"
+        android:src="@drawable/ic_plus"/>
+</FrameLayout>
