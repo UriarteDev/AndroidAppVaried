@@ -3,7 +3,8 @@
     android:layout_width="250dp"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:background="@color/card">
+    android:background="@color/card"
+    android:padding="16dp">
 
     <EditText
         android:id="@+id/etTask"
@@ -23,7 +24,7 @@
             android:id="@+id/rbtnCompras"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Compras"
+            android:text="@string/listCategoryC"
             android:checked="true"
             android:textColor="@color/white"
             android:buttonTint="@color/LCompras"/>
@@ -32,7 +33,7 @@
             android:id="@+id/rbtnNotas"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Notas"
+            android:text="@string/listCategoryN"
             android:textColor="@color/white"
             android:buttonTint="@color/LNotas"/>
 
@@ -40,9 +41,15 @@
             android:id="@+id/rbtnOtros"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Otros"
+            android:text="@string/listCategoryO"
             android:textColor="@color/white"
             android:buttonTint="@color/LOtros"/>
 
     </RadioGroup>
+    <Button
+        android:id="@+id/btnAddTask"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/LOtros"
+        android:text="@string/listbtnDialogAdd"/>
 </LinearLayout>

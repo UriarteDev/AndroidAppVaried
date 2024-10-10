@@ -28,5 +28,9 @@
     <string name="listTitle">NO OLVIDES NADA</string>
     <string name="listCategories">CATEGORIAS</string>
     <string name="listTask">TAREAS</string>
+    <string name="listCategoryC">Compras</string>
+    <string name="listCategoryN">Notas</string>
+    <string name="listCategoryO">Otros</string>
     <string name="listDialogAdd">Añade una tarea</string>
+    <string name="listbtnDialogAdd">CREAR TAREA</string>
 </resources>

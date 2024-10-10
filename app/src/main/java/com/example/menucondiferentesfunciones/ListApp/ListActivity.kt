@@ -1,7 +1,12 @@
 package com.example.menucondiferentesfunciones.ListApp
 
+import android.annotation.SuppressLint
 import android.app.Dialog
 import android.os.Bundle
+import android.widget.Button
+import android.widget.EditText
+import android.widget.RadioButton
+import android.widget.RadioGroup
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -16,12 +21,12 @@ class ListActivity : AppCompatActivity() {
     private val categories = listOf(
         TaskCategory.Compras,
         TaskCategory.Notas,
-        TaskCategory.Otras
+        TaskCategory.Otros
     )
     private val tasks = mutableListOf(
         Task("PruebaC", TaskCategory.Compras),
         Task("PruebaN", TaskCategory.Notas),
-        Task("PruebaO", TaskCategory.Otras)
+        Task("PruebaO", TaskCategory.Otros)
     )
 
     private lateinit var rvCategory: RecyclerView
@@ -53,20 +58,62 @@ class ListActivity : AppCompatActivity() {
     }
 
     private fun initListeners(){
-        fabTask.setOnClickListener {  }
+        fabTask.setOnClickListener { showDialog() }
     }
 
     private fun initUI(){
-        categoriesAdapter = CategoriesAdapter(categories)
+        categoriesAdapter = CategoriesAdapter(categories){ position -> updateCategories(position) }
         rvCategory.layoutManager = LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL, false)
         rvCategory.adapter = categoriesAdapter
 
-        taskAdapter = TaskAdapter(tasks)
+        taskAdapter = TaskAdapter(tasks) {position -> onItemSelectec(position)}
         rvTask.layoutManager = LinearLayoutManager(this)
         rvTask.adapter = taskAdapter
     }
 
     private fun showDialog(){
         val dialog = Dialog(this)
+        dialog.setContentView(R.layout.dialog_task)
+
+        val btnAddTask:Button = dialog.findViewById(R.id.btnAddTask)
+        val etTask:EditText = dialog.findViewById(R.id.etTask)
+        val rgCategories:RadioGroup = dialog.findViewById(R.id.rgCategories)
+
+        btnAddTask.setOnClickListener {
+            val selectdId = rgCategories.checkedRadioButtonId
+            val currentTask= etTask.text.toString()
+            if(currentTask.isNotEmpty()){
+                val selectedRB:RadioButton = rgCategories.findViewById(selectdId)
+                val currentCategory:TaskCategory = when(selectedRB.text){
+                    getString(R.string.listCategoryC) -> TaskCategory.Compras
+                    getString(R.string.listCategoryN) -> TaskCategory.Notas
+                    else -> TaskCategory.Otros
+                }
+                tasks.add(Task(currentTask, currentCategory))
+                updateTask()
+                dialog.hide()
+            }
+        }
+        dialog.show()
     }
+
+    @SuppressLint("NotifyDataSetChanged")
+    private fun updateTask(){
+        val selectedCategories: List<TaskCategory> = categories.filter { it.isSelected }
+        val newTask = tasks.filter { selectedCategories.contains(it.category) }
+        taskAdapter.task = newTask
+        taskAdapter.notifyDataSetChanged()
+    }
+
+    private fun updateCategories(position: Int){
+        categories[position].isSelected = !categories[position].isSelected
+        categoriesAdapter.notifyItemChanged(position)
+        updateTask()
+    }
+
+    private fun onItemSelectec(posicion:Int){
+        tasks[posicion].isSelected = !tasks[posicion].isSelected
+        updateTask()
+    }
+
 }
