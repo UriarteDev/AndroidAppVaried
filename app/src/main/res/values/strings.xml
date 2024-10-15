@@ -33,4 +33,11 @@
     <string name="listCategoryO">Otros</string>
     <string name="listDialogAdd">Añade una tarea</string>
     <string name="listbtnDialogAdd">CREAR TAREA</string>
+
+    <!--ConsorsioApp-->
+    <string name="ConBtnNew">Nuevo Docente</string>
+    <string name="ConCod">Codigo</string>
+    <string name="ConNom">Nombre</string>
+    <string name="ConPat">Apellido Paterno</string>
+    <string name="ConMat">Apellido Materno</string>
 </resources>
